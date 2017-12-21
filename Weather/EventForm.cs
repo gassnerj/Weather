@@ -37,11 +37,11 @@ namespace Weather
             string strSender = (string)eve["properties"]["sender"];
             string strArea = (string)eve["properties"]["areaDesc"];
 
-            if (eve["properties"]["parameters"]["NWSheadline"][0] != null)
-            {
-                string strNWSHeadline = (string)eve["properties"]["parameters"]["NWSheadline"][0];
-                this.groupBox1.Text = strNWSHeadline;
-            }
+            //if (eve["properties"]["parameters"]["NWSheadline"][0] != null)
+            //{
+            //    string strNWSHeadline = (string)eve["properties"]["parameters"]["NWSheadline"][0];
+            //    this.groupBox1.Text = strNWSHeadline;
+            //}
                 
 
 

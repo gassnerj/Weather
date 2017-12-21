@@ -110,6 +110,7 @@ namespace Weather
             }
         }
 
+        //returns the proper url depending on whether the area is a state county or all areas.
         public string getURL(string areaName)
         {
             if (areaName != null && areaName.Length == 2)
@@ -154,6 +155,9 @@ namespace Weather
             }
         }
 
+        //does the legwork of requesting data from the server and sets the alerts property of this class to contain the json data.
+        //in this case the method gets zone data for use in the states and counties list boxes. This is only done once.
+        //TODO check for existing zones.json file if not exists create it.
         public void fetchJson()
         {
             String url = "https://api.weather.gov/zones";
@@ -187,6 +191,7 @@ namespace Weather
             }
         }
 
+        //does the legwork of requesting data from the server and sets the alerts property of this class to contain the json data.
         public void fetchJson(string url)
         {
             try
@@ -217,6 +222,7 @@ namespace Weather
             }
         }
 
+        //returns a List collection object for each feature in the json data.
         public List<Event> makeEvent()
         {
             List<Event> events = new List<Event>();
