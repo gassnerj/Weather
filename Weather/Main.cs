@@ -107,6 +107,7 @@ namespace Weather
             string alrtCnt = eves.Count().ToString();
             this.alertCountTextBox.Text = alrtCnt;
         }
+        //retrieves new data from nws server. Creates a list collection  and sets the datagridview to that collection.
         private void refreshAlerts()
         {
             //MessageBox.Show("It's working.");
