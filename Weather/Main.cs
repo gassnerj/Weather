@@ -44,18 +44,18 @@ namespace Weather
             //string alrtCnt = eves.Count().ToString();
             //this.alertCountTextBox.Text = alrtCnt;
 
-                var startTimeSpan = TimeSpan.Zero;
-                var periodTimeSpan = TimeSpan.FromMinutes(2);
-                var timer = new System.Threading.Timer((e) =>
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromMinutes(2);
+            var timer = new System.Threading.Timer((e) =>
+            {
+                Thread t = new Thread(new ThreadStart(alertsThread));
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+                while (t.IsAlive)
                 {
-                    Thread t = new Thread(new ThreadStart(alertsThread));
-                    t.SetApartmentState(ApartmentState.STA);
-                    t.Start();
-                    while (t.IsAlive)
-                    {
-                        Application.DoEvents();
-                    }
-                }, null, startTimeSpan, periodTimeSpan);
+                    Application.DoEvents();
+                }
+            }, null, startTimeSpan, periodTimeSpan);
         }
 
         private void statesListBox_SelectedIndexChanged(object sender, EventArgs e)
