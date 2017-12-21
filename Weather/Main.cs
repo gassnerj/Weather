@@ -140,10 +140,5 @@ namespace Weather
             });
             //TimeSpan interval = new TimeSpan(0, 1, 0);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
- 
-        }
     }
 }
