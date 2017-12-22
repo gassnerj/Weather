@@ -140,5 +140,16 @@ namespace Weather
             });
             //TimeSpan interval = new TimeSpan(0, 1, 0);
         }
+
+        private void alertsDataGridView_RowsAdded(object sender, System.Windows.Forms.DataGridViewRowsAddedEventArgs e)
+        {
+            foreach (DataGridViewRow row in alertsDataGridView.Rows)
+            {
+                DataGridViewCell strEvent = row.Cells["eventName"];
+
+                row.DefaultCellStyle.BackColor = a.changeColor(strEvent.Value.ToString());
+                row.DefaultCellStyle.ForeColor = a.changeColor(strEvent.Value.ToString(), "front");
+            }
+        }
     }
 }

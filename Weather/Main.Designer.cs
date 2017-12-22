@@ -69,6 +69,7 @@
             this.alertsDataGridView.Size = new System.Drawing.Size(997, 459);
             this.alertsDataGridView.TabIndex = 2;
             this.alertsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.alertsDataGridView_CellDoubleClick_1);
+            this.alertsDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.alertsDataGridView_RowsAdded);
             // 
             // button1
             // 

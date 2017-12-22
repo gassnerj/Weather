@@ -52,27 +52,9 @@ namespace Weather
             this.severityTextBox.Text = strSeverity;
             this.senderTextBox.Text = strSender;
             this.areaTextBox.Text = strArea;
-            
-
-            switch (strEvent)
-            {
-                case "Winter Storm Warning":
-                    this.eventTextBox.BackColor = Color.Blue;
-                    this.eventTextBox.ForeColor = Color.White;
-                    break;
-                case "Severe Thunderstorm Warning":
-                    this.eventTextBox.BackColor = Color.Yellow;
-                    this.eventTextBox.ForeColor = Color.Black;
-                    break;
-                case "Tornado Warning":
-                    this.eventTextBox.BackColor = Color.Red;
-                    this.eventTextBox.ForeColor = Color.White;
-                    break;
-                case "Dense Fog Advisory":
-                    this.eventTextBox.BackColor = Color.Gray;
-                    this.eventTextBox.ForeColor = Color.Black;
-                    break;
-            }
+            this.eventTextBox.BackColor = a.changeColor(strEvent);
+            this.eventTextBox.ForeColor = a.changeColor(strEvent, "front");
+ 
         }
     }
 }
