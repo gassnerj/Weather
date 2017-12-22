@@ -11,6 +11,7 @@ using System.Windows;
 using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Weather
 {
@@ -254,6 +255,73 @@ namespace Weather
             {
                 string strNWSHeadline = "";
                 return strNWSHeadline;
+            }
+        }
+
+        public Color changeColor(string strEvent, string layer="back")
+        {
+            switch (strEvent)
+            {
+                case "Flood Warning":
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    } else
+                    {
+                        return Color.Green;
+                    }
+                case "Severe Thunderstorm Warning":
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    }
+                    else
+                    {
+                        return Color.Yellow;
+                    }
+                case "Tornado Warning":
+                    if (layer == "front")
+                    {
+                        return Color.White;
+                    } else
+                    {
+                        return Color.Red;
+                    }
+                case "Flash Flood Warning":
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    }
+                    else
+                    {
+                        return Color.LimeGreen;
+                    }
+                case "Winter Storm Warning":
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    }
+                    else
+                    {
+                        return Color.Aqua;
+                    }
+                case "Dense Fog Advisory":
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    }
+                    else
+                    {
+                        return Color.Gray;
+                    }
+                default:
+                    if (layer == "front")
+                    {
+                        return Color.Black;
+                    } else
+                    {
+                        return Color.White;
+                    }
             }
         }
     }
